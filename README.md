@@ -205,9 +205,9 @@ plt.show()
 B, G, R = cv2.split(img)
 zeros = np.zeros_like(B)
 
-B_colored = cv2.merge([B, zeros, zeros])  # Blue channel
-G_colored = cv2.merge([zeros, G, zeros])  # Green channel
-R_colored = cv2.merge([zeros, zeros, R])  # Red channel
+B_colored = cv2.merge([B, zeros, zeros])
+G_colored = cv2.merge([zeros, G, zeros])
+R_colored = cv2.merge([zeros, zeros, R])
 
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 B_rgb = cv2.cvtColor(B_colored, cv2.COLOR_BGR2RGB)
