@@ -34,7 +34,7 @@ Split the image (boy.jpg) into B, G, R components and display the channels
 - **Name:** Sai Vishal D  
 - **Register Number:** 212223230180
 
-  ### Ex. No. 01
+### Ex. No. 01
 
 #### 1. Read the image ('Eagle_in_Flight.jpg') using OpenCV imread() as a grayscale image.
 ```python
@@ -152,7 +152,6 @@ bright_image_rgb = cv2.cvtColor(bright_image, cv2.COLOR_BGR2RGB)
 ```python
 img_brighter = cv2.add(img, matrix)
 img_darker = cv2.subtract(img, matrix)
-# YOUR CODE HERE
 ```
 
 #### 17. Display the images (Original Image, Darker Image, Brighter Image).
