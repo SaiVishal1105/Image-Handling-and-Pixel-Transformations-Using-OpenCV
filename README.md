@@ -31,59 +31,71 @@ Display the original, lower contrast, and higher contrast images.
 Split the image (boy.jpg) into B, G, R components and display the channels
 
 ## Program Developed By:
-- **Name:** [Your Name Here]  
-- **Register Number:** [Your Register Number Here]
+- **Name:** Sai Vishal D  
+- **Register Number:** 212223230180
 
   ### Ex. No. 01
 
 #### 1. Read the image ('Eagle_in_Flight.jpg') using OpenCV imread() as a grayscale image.
 ```python
-# YOUR CODE HERE
+import cv2
+import matplotlib.pyplot as plt
+img = cv2.imread("Eagle_in_Flight.jpg")
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)
 ```
 
 #### 2. Print the image width, height & Channel.
 ```python
-# YOUR CODE HERE
+img_gray.shape
 ```
 
 #### 3. Display the image using matplotlib imshow().
 ```python
-# YOUR CODE HERE
+plt.imshow(img_gray)
+plt.show()
 ```
 
 #### 4. Save the image as a PNG file using OpenCV imwrite().
 ```python
-# YOUR CODE HERE
+cv2.imwrite("output.png", img)
 ```
 
 #### 5. Read the saved image above as a color image using cv2.cvtColor().
 ```python
-# YOUR CODE HERE
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 
 #### 6. Display the Colour image using matplotlib imshow() & Print the image width, height & channel.
 ```python
-# YOUR CODE HERE
+plt.imshow(img_rgb)
+plt.title("Color Image")
+plt.show()
+img_rgb.shape
 ```
 
 #### 7. Crop the image to extract any specific (Eagle alone) object from the image.
 ```python
-# YOUR CODE HERE
+cropped_eagle = image_rgb[y:y+h, x:x+w]
 ```
 
 #### 8. Resize the image up by a factor of 2x.
 ```python
-# YOUR CODE HERE
+scale_factor = 2
+new_width = int(cropped_eagle.shape[1] * scale_factor)
+new_height = int(cropped_eagle.shape[0] * scale_factor)
+
+resized_image = cv2.resize(cropped_eagle, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
 ```
 
 #### 9. Flip the cropped/resized image horizontally.
 ```python
-# YOUR CODE HERE
+flipped_image = cv2.flip(resized_image, 1)
 ```
 
 #### 10. Read in the image ('Apollo-11-launch.jpg').
 ```python
-# YOUR CODE HERE
+
 ```
 
 #### 11. Add the following text to the dark area at the bottom of the image (centered on the image):
